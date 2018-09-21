@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>帳戶密碼驗證</title>
+</head>
+  <style>
+alert {
+    display:none;
+}
+.error {
+    display:block;
+    color:red;
+}
+    </style>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+
+<form name="form1" ng-app="">
+    帳號：
+    <input type="text"
+        name="account"
+        ng-model="userAccount"
+        ng-minlength="3"
+        ng-maxlength="8"
+        placeholder="帳號長度 3 ~ 8"
+        autocomplete="off"
+        required
+    /><br /><br />
+    密碼：
+    <input type="text"
+        name="pass"
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$"
+        placeholder="至少一個大寫字母 + 一個小寫字母 + 一個數字，且長度 6 ~ 10"
+        required
+    />
+
+    <alert ng-class="{'error':form1.pass.$error.pattern}">
+        密碼不符合規範
+    </alert>
+    <br /><br />
+    <input type="submit" value="send" ng-disabled="form1.$invalid" />
+</form>
+
+
+</body>
+</html>
