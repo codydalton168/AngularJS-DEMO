@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+
+  
+<br> 
+  
+數量: <input type="number" ng-model="quantity" ng-init="quantity=1">  
+  
+<br> 
+  
+單價: <input type="number" ng-model="price" ng-init="price=299"> 
+  
+<br> 
+  
+總價: {{ quantity * price }}
+  
+</body>
+</html>
