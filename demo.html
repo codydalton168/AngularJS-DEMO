@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
 </head>
+  <style>
+.base-class {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.base-class.my-class {
+  color: red;
+  font-size:3em;
+}
+    </style>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 
@@ -20,6 +31,38 @@
 <br> 
   
 總價: {{ quantity * price }}
+  
+  
+  
+<br> <br> <br> <br> 
+
+  
+<div ng-app="">
+<input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
+<input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
+<br>
+<span class="base-class" ng-class="myVar">Sample Text</span>
+</div>
+  
+  
+  
+<br> 
+<div ng-app="">
+
+<input type="button" value="按一下" ng-click="mystyle={
+
+fontSize : '36px',
+
+color : 'blue',
+
+textDecoration : 'underline'
+
+}" />
+
+<div ng-style="mystyle">測試一下</div>
+
+</div> 
+  
   
 </body>
 </html>
